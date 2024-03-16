@@ -24,3 +24,61 @@ If you discover a security vulnerability within Lumen, please send an e-mail to 
 ## License
 
 The Lumen framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Instrucciones para el Proyecto
+
+### Ejecutar el proyecto
+
+```
+php -S localhost:8000 -t public
+```
+
+### Migrations
+
+#### Creación de una tabla
+
+```
+php artisan make:migration create_categories_table
+```
+
+#### Ejecutar migration
+
+```
+php artisan migrate
+```
+
+#### Hacer rollback de migration
+
+```
+php artisan migrate:rollback
+```
+
+#### Hacer cambios en la estructura de la BD utilizando migrations
+
+```
+php artisan make:migration add_category_id_to_contents_table --table=contents
+```
+
+```
+php artisan make:migration drop_columns_tags_featured_to_contents_table --table=contents
+```
+
+```
+php artisan make:migration change_columns_pretitle_edition_date_to_contents_table --table=contents
+```
+
+#### Crear Seeder para una tabla
+
+```
+php artisan make:seeder CategoriesTableSeeder
+```
+
+#### Ejecutar el Seeder a una tabla o a toda la BD
+
+```
+php artisan db:seed --class=ContentsTableSeeder
+```
+
+```
+php artisan db:seed
+```
